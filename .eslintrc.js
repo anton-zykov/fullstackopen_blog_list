@@ -19,7 +19,7 @@ module.exports = {
             'windows'
         ],
         'no-console': 0,
-        'no-underscore-dangle': 0,
         'import/order': 0,
+        'import/newline-after-import': 0,
     }
 };

@@ -5,7 +5,7 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-  "title": "Second Post",
+  "title": "Third Post",
   "author": "Anton",
   "url": "http://bababa.com",
   "likes": 7
