@@ -21,5 +21,6 @@ module.exports = {
         'no-console': 0,
         'import/order': 0,
         'import/newline-after-import': 0,
+        'object-curly-newline': 0,
     }
 };

@@ -5,7 +5,7 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-  "title": "Fifth",
+  "title": "Second",
   "author": "Anton",
   "url": "http://bababa.com",
   "likes": 7
@@ -20,3 +20,6 @@ Content-Type: application/json
   "name": "Ludwig The Greatishest",
   "password": "126"
 }
+
+###
+DELETE http://localhost:3003/api/blogs/63701caad03239fd3399d5e4
