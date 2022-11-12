@@ -7,13 +7,18 @@ blogsRouter.get('/', async (request, response) => {
 })
 
 blogsRouter.post('/', async (request, response) => {
-  // eslint-disable-next-line prefer-destructuring
-  const body = request.body
+  const {
+    title,
+    author,
+    url,
+    likes,
+  } = request.body
+
   const blog = new Blog({
-    title: body.title,
-    author: body.author,
-    url: body.url,
-    likes: body.likes,
+    title,
+    author,
+    url,
+    likes,
   })
   const savedBlog = await blog.save()
   response.status(201).json(savedBlog)
@@ -25,14 +30,19 @@ blogsRouter.delete('/:id', async (request, response) => {
 })
 
 blogsRouter.put('/:id', async (request, response) => {
-  // eslint-disable-next-line prefer-destructuring
-  const body = request.body
-  const newBlog = {
-    title: body.title,
-    author: body.author,
-    url: body.url,
-    likes: body.likes,
-  }
+  const {
+    title,
+    author,
+    url,
+    likes,
+  } = request.body
+
+  const newBlog = new Blog({
+    title,
+    author,
+    url,
+    likes,
+  })
 
   const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, newBlog, { new: true })
   response.status(200).json(updatedBlog)
