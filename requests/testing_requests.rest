@@ -1,12 +1,14 @@
-GET http://localhost:3003/api/users
+GET http://localhost:3003/api/blogs
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFrenlrb3YiLCJpZCI6IjYzNzEzNjZhMDUwNDYzYmIwOTFhNzU3MSIsImlhdCI6MTY2ODM2ODUwM30.hYUuvCNqiMJrE2XHkm2t0YsgfR-tViHxTJLyFIganaY
 
 ###
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFrenlrb3YiLCJpZCI6IjYzNzEzNjZhMDUwNDYzYmIwOTFhNzU3MSIsImlhdCI6MTY2ODM2ODUwM30.hYUuvCNqiMJrE2XHkm2t0YsgfR-tViHxTJLyFIganaY
 
-{
-  "title": "Second",
-  "author": "Anton",
+{ 
+  "title": "Fifth",
+  "author": "Whomever",
   "url": "http://bababa.com",
   "likes": 7
 }
@@ -16,10 +18,20 @@ POST http://localhost:3003/api/users
 Content-Type: application/json
 
 {
-  "username": "lthegreatish",
-  "name": "Ludwig The Greatishest",
+  "username": "akzykov",
+  "name": "Azykov",
   "password": "126"
 }
 
 ###
-DELETE http://localhost:3003/api/blogs/63701caad03239fd3399d5e4
+DELETE http://localhost:3003/api/blogs/63701dad86d67eaf29a6ef18
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFrenlrb3YiLCJpZCI6IjYzNzEzNjZhMDUwNDYzYmIwOTFhNzU3MSIsImlhdCI6MTY2ODM2NDIyOH0.5IhsD-OxuSYcFV38gerw7K3S5M6_wPyfhTOJAroIHBg
+
+###
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "akzykov",
+  "password": "126"
+}
