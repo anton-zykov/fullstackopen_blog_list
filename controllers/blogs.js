@@ -26,7 +26,8 @@ blogsRouter.post('/', tokenExtractor, userExtractor, async (request, response) =
 })
 
 blogsRouter.delete('/:id', tokenExtractor, userExtractor, async (request, response) => {
-  const { user } = request.user
+  const { user } = request
+
   const blog = await Blog.findById(request.params.id)
   if (user.id.toString() === blog.user.toString()) {
     await blog.remove()
@@ -41,12 +42,12 @@ blogsRouter.delete('/:id', tokenExtractor, userExtractor, async (request, respon
 blogsRouter.put('/:id', async (request, response) => {
   const { title, author, url, likes } = request.body
 
-  const newBlog = new Blog({
+  const newBlog = {
     title,
     author,
     url,
     likes,
-  })
+  }
 
   const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, newBlog, { new: true })
   response.status(200).json(updatedBlog)
